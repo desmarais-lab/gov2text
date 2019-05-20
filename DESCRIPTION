@@ -1,0 +1,23 @@
+Package: gov2text
+Type: Package
+Title: Turning website files into readable text
+Version: 0.1.0
+Author: Markus Neumann <mvn5218@psu.edu> Fridolin Linder <fridolin.linder@nyu.edu> Bruce Desmarais <bdesmarais@psu.edu>
+Maintainer: Markus Neumann <mvn5218@psu.edu>
+Description: This package assists in the conversion of website text stored in different filetypes to raw, clean text. The package corrects erroneous file types, reads in each file according to its extension, removes boilerplate and conducts preprocessing.
+License: GPL2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Imports: 
+    stringr,
+    wand,
+    tools,
+    data.table,
+    doParallel,
+    foreach,
+    readtext,
+    bit,
+    quanteda,
+    hunspell,
+    spacyr
