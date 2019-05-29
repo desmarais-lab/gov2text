@@ -2,9 +2,14 @@
 #'
 #' A Function to correct the file type of each file in the given directory. The function does not return anything - it changes the file endings on the hard drive.
 #'
-#' @param str The directory in which the files reside. Sub-directories will also be accessed
+#' @param str The directory in which the files reside. Sub-directories will also be accessed. This folder has to be named \code{files_for_gov2text} on the system.
 #' @export
+#' @details The specified \code{path} has to be named \code{files_for_gov2text} to ensure that users do not accidentally put the wrong path here. Without this precaution, users might accidentally put a system-relevant path here (i.e. root), and since this function acts recursively, it might unintentionally alter important files. To ensure that this cannot happen, the directory in which files should be corrected HAS TO BE named \code{files_for_gov2text}. Note that it is still possible to use relative paths here. I.e. if \code{files_for_gov2text} is the current working directory, \code{path = "./"} would select it correctly.
 correctFiletypes <- function(path){
+
+  if(basename(tools::file_path_as_absolute(path))!="files_for_gov2text"){
+    stop("Stopping. The specified directory is not named files_for_gov2text. To ensure that users don't damage their system, this is required. Please rename the folder accordingly. See the documentation for more information.")
+  }
 
   #create a list of all files in all subdirectories
   #f <- list.files(path, recursive = T)

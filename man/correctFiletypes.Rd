@@ -7,8 +7,11 @@
 correctFiletypes(path)
 }
 \arguments{
-\item{str}{The directory in which the files reside. Sub-directories will also be accessed}
+\item{str}{The directory in which the files reside. Sub-directories will also be accessed. This folder has to be named \code{files_for_gov2text} on the system.}
 }
 \description{
 A Function to correct the file type of each file in the given directory. The function does not return anything - it changes the file endings on the hard drive.
+}
+\details{
+The specified \code{path} has to be named \code{files_for_gov2text} to ensure that users do not accidentally put the wrong path here. Without this precaution, users might accidentally put a system-relevant path here (i.e. root), and since this function acts recursively, it might unintentionally alter important files. To ensure that this cannot happen, the directory in which files should be corrected HAS TO BE named \code{files_for_gov2text}. Note that it is still possible to use relative paths here. I.e. if \code{files_for_gov2text} is the current working directory, \code{path = "./"} would select it correctly.
 }
