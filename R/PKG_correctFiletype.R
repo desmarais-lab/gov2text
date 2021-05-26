@@ -45,7 +45,7 @@ correctFiletypes <- function(path){
   magicResults$extensions[magicResults$extensions=="f, f77, f90, for"] <- "f"
   magicResults$extensions[magicResults$extensions=="htm, html, shtml"] <- "html"
   magicResults$extensions[magicResults$extensions=="ics, ifb"] <- "ics"
-  magicResults$extensions[magicResults$extensions=="jpe, jpeg, jpg"] <- "jpg"
+  magicResults$extensions[magicResults$extensions=="jfif, jpe, jpeg, jpg"] <- "jpg"
   magicResults$extensions[magicResults$extensions=="m1v, m2v, mpe, mpeg, mpg"] <- "mpeg"
   magicResults$extensions[magicResults$extensions=="m2a, m3a, mp2, mp2a, mp3, mpga"] <- "mp3"
   magicResults$extensions[magicResults$extensions=="mov, qt"] <- "mov"
